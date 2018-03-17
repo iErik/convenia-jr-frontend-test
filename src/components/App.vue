@@ -22,15 +22,10 @@ export default {
   },
   methods: {
     validateCPF: function(ev) {
-      let value = ev.target.value.split(/\D/).join('');
-
-      // Check if user isn't just pressing backspace (ev.data !== null),
-      // then immediately remove any non-digit characters inserted by
-      // the user and return the function.
-      if (ev.data !== null && (/\D+/.test(ev.data) || value.length > 11)) {
-        ev.target.value = ev.target.value.slice(0, -1);
-        return;
-      }
+      // This will remove any non-digit characters from the input
+      // and will also make sure that the string is 11 characters long
+      // or shorter.
+      let value = ev.target.value.split(/\D/).join('').substr(0, 11);
 
       // Properly format the string into the standard CPF format
       if (value.length > 9) {
@@ -45,11 +40,9 @@ export default {
       this.isCPFValid = CPF.validate(value);
     },
     submitUser: async function(ev) {
-      ev.preventDefault();
-
       try {
         // Send data to the server then reset local user data after
-        // a successful response
+        // a successful response, catch the error otherwise.
         await axios.post(usersURL, this.userData);
         this.userData = { email: '', password: '' };
       } catch (err) {
@@ -94,7 +87,7 @@ export default {
 
               <!-- Login form -->
               <div class="col">
-                <form @submit="submitUser" class="pt-4 no-gutters">
+                <form @submit.prevent="submitUser" class="pt-4 no-gutters">
                   <div class="form-group input-group col-md-12 col-lg-6">
                     <input @input="validateCPF" type="text" class="form-control" placeholder="ativar CPF">
                     <div class="input-group-append">
