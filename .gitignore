@@ -54,3 +54,7 @@ jspm_packages/
 *.DS_Store
 *.cache
 .sass-cache
+
+# Compiled assets
+/dist/
+/index.html
