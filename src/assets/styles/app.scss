@@ -1,0 +1,52 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+
+
+//  General Page Layout
+//  -------------------
+
+html, body {
+  height: 100%;
+}
+
+//  Buttons
+//  -------
+
+.btn-primary {
+  font-weight: bold;
+  font-size: .875rem;
+  color: #FFFFFF;
+
+  &:disabled { color: #FFFFFF; }
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-round {
+  border-radius: .9375rem;
+  padding: .125rem 1.5rem;
+
+  &:disabled { color: #FFFFFF; }
+}
+
+//  Form Elements
+//  -------------
+
+.input-group {
+  background-color: $input-bg;
+  border-radius: $input-border-radius;
+
+  .input-group-append .btn {
+    border-radius: $btn-border-radius;
+    margin: 2px;
+  }
+}
+
+//  Modifiers
+//  ---------
+
+.text-antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
