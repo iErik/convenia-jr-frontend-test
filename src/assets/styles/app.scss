@@ -1,6 +1,16 @@
+// Required imports
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/mixins';
 @import 'variables';
-@import '~bootstrap/scss/bootstrap';
 
+// Bootstrap features
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/input-group';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/utilities';
 
 //  General Page Layout
 //  -------------------
