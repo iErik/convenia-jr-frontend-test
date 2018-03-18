@@ -19,7 +19,13 @@
 
 ### Running the development server
 
-To run the development server localy you can simply run the following npm
+Before you do anything, make sure to install all of the package dependencies:
+
+```bash
+npm install
+```
+
+Then you can start the development server localy by running the following npm
 command in a terminal:
 
 ```bash
