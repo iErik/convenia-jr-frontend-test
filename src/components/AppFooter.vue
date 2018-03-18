@@ -33,30 +33,40 @@ export default {
   <footer class="app-footer">
     <div class="container-fluid h-100">
       <div class="row align-items-center justify-content-between h-100">
-        <div class="wrapper-partners col-12 col-md pb-2 ml-md-4 pl-md-4 pb-md-0">
+
+        <!-- partners-container -->
+        <div class="partners-container col-12 col-md justify-content-center pb-2 ml-md-4 pl-md-4 pb-md-0">
           <span class="partners-text text-muted text-antialiased">
             Parceiros
           </span>
-          <div class="partners col-lg-8">
 
-            <carousel
-              :navigationEnabled="true"
-              :paginationEnabled="false"
-              :perPageCustom="[[0, 3], [992, 6], [1650, 9]]"
-              navigationPrevLabel='<i class="fa fa-angle-left" />'
-              navigationNextLabel='<i class="fa fa-angle-right" />'>
-              <slide v-for="(partner, index) in partnerList" :key="index">
-                <img :src="partner.image" :alt="partner.name" class="partner-img">
-              </slide>
-            </carousel>
+          <!-- wrapper-partners -->
+          <div class="wrapper-partners col-10 col-md">
+            <div class="partners col-12 col-lg-8">
 
+              <carousel
+                :navigationEnabled="true"
+                :paginationEnabled="false"
+                :perPageCustom="[[0, 3], [768, 5], [1200, 6], [1650, 9]]"
+                navigationPrevLabel='<i class="fa fa-angle-left" />'
+                navigationNextLabel='<i class="fa fa-angle-right" />'>
+                <slide v-for="(partner, index) in partnerList" :key="index">
+                  <img :src="partner.image" :alt="partner.name" class="partner-img">
+                </slide>
+              </carousel>
+
+            </div>
           </div>
+
         </div>
+
+        <!-- convenia-brand wrapper -->
         <div class="col-12 col-md-auto d-flex align-items-center justify-content-center mr-md-1">
           <small class="brand-legend text-muted mr-3">desennvolvido por</small>
           <img src="~img/convenia-brand.png" alt="Desennvolvido por Convenia" class="convenia-brand">
         </div>
       </div>
+
     </div>
   </footer>
 </template>
@@ -86,14 +96,16 @@ $carousel-nav-size: 25px;
     min-height: $app-footer-height;
   }
 
-  .wrapper-partners {
+  .partners-container {
     display: flex;
     align-items: center;
 
     .partners-text {
-      font-size: 1rem;
+      font-size: 1.125rem;
       @include media-breakpoint-down(sm) { font-size: .875rem }
     }
+
+    .wrapper-partners { width: 0px; padding: 0 10px; }
 
     .partners {
       display: flex;
@@ -106,6 +118,7 @@ $carousel-nav-size: 25px;
       }
 
       .VueCarousel {
+        max-width: 100%;
         flex-basis: 100%;
         flex-shrink: 1;
 
