@@ -71,8 +71,7 @@ export default {
 $app-footer-bg: #F3F3F4;
 $app-footer-height: 78px;
 
-$carousel-nav-width: 24px;
-$carousel-nav-height: 24px;
+$carousel-nav-size: 25px;
 
 //  Classes
 //  -------
@@ -117,14 +116,22 @@ $carousel-nav-height: 24px;
           align-items: center;
           justify-content: center;
 
-          width: 24px;
-          height: 24px;
+          width:  $carousel-nav-size;
+          height: $carousel-nav-size;
 
           border-radius: 50%;
           background-color: #D4D2D2;
           color: #FFFFFF;
 
-          .fa { font-size: 1.25rem; }
+          &:first-child .fa { margin-right: 2px; }
+          &:last-child .fa { margin-left: 2px; }
+
+          .fa {
+            font-size: 1.25rem;
+            line-height: $carousel-nav-size;
+            -webkit-font-smoothing: initial;
+            -moz-osx-font-smoothing: initial;
+          }
         }
       }
     }
