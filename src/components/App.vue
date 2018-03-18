@@ -61,7 +61,7 @@ export default {
 
           <!-- Logo wrapper -->
           <div class="ml-3 mb-4 mt-4 ml-md-5 mb-md-5 mt-md-0">
-            <img src="~img/convenia-logo.png" alt="Convenia Logo" class="convenia-logo img-fluid ml-md-2">
+            <img src="~img/convenia-logo.png" alt="Convenia Logo" class="convenia-logo ml-md-2">
           </div>
 
         </div>
@@ -102,18 +102,18 @@ export default {
                         Se você já possui cadastro, <a href="#">faça o login</a>
                       </small>
                     </div>
-                    <div class="col-lg-3 mb-3 mb-lg-0">
+                    <div class="col-sm-12 col-lg-3 mb-3 mb-lg-0">
                       <input v-model="userData.email" type="email" class="form-control" placeholder="e-mail">
                     </div>
-                    <div class="col-lg-3 mb-3 mb-lg-0">
+                    <div class="col-sm-12 col-lg-3 mb-3 mb-lg-0">
                       <input v-model="userData.password" type="password" class="form-control" placeholder="senha">
                     </div>
-                    <div class="col-auto d-flex align-items-center">
+                    <div class="col col-lg-auto order-1 d-flex justify-content-end align-items-center">
                       <button :disabled="!isUserDataValid" type="submit" class="btn btn-primary btn-round">
                         Entrar
                       </button>
                     </div>
-                    <div class="col-12 mt-2">
+                    <div class="col col-lg-12 order-lg-2 mt-lg-2">
                       <small class="font-weight-bold">
                         <a href="#">Esqueci a senha</a>
                       </small>
@@ -159,6 +159,8 @@ $right-column-bg: #868686;
 
   flex: 0 0 46.998535871%;
   max-width: 46.998535871%;
+
+  .convenia-logo { max-width: 100%; }
 
   @include media-breakpoint-down(sm) {
     flex: auto;
